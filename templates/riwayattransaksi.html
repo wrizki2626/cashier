@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/rwytTransaksi.css">
+{% endblock %}
+
+{% block title%}
+<title>Riwayat Transaksi</title>
+{% endblock %}
+
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-xxl">
+        <a class="navbar-brand fw-semibold" href="#">App Cashier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="nav justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="{{url_for('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('pemesanan')}}">Pemesanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('ceksaldo')}}">Cek Saldo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{url_for('riwayattransaksi')}}">Riwayat</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('getCart')}}">Keranjang ({{ session['Shoppingcart']|length }})</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container f-section">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+             <div class="alert {{ category }} alert-dismissible fade show text-center mt-2" role="alert">
+                <strong class="text-center">{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <form action="{{url_for('searchriwayat')}}" class="form-section" method="POST">
+        <div class="">
+            <div class="col col-md-4">
+                <h5>Cari berdasarkan id</h5>
+            </div>
+            <div class="col d-flex flex-wrap">
+                <input type="search" name="forminput" id="forminput" class="form-control" placeholder="Masukkan Id Transaksi">
+                <button type="submit" class="tombol">Cari</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <section>
+        <div class="table-section table-responsive">
+            <table class="table">
+                <thead>
+                    <tr class="table-secondary">
+                        <th scope="col">Id Transaksi</th>
+                        <th scope="col">Total Pembelian</th>
+                        <th scope="col">Tanggal Pesanan</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for data in rows %}
+                        <tr>
+                            <td>{{data.id}}</td>
+                            <td>{{format_rupiah(data.totalPembayaran)}}</td>
+                            <td>{{data.ttl_pemesanan}}</td>
+                            <td>
+                                <a href='{{url_for("detail", id=data.id)}}' name="btn_edit" id="btn_edit" class="tombol">Detail</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+
+.navbar{
+  background-color: #4A55A2;
+}
+
+
+.form-section{
+    display: flex;
+}
+
+.first-child-form{
+    margin-top: 30px;
+    width: 80%;
+    display: flex;
+}
+
+.element-form{
+    width: 51%;
+}
+
+label{
+    display: block;
+    width: 40%;
+    margin: 10px 0px;
+}
+.form-control{
+    display: block;
+    width: 90%;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 45px;
+}
+
+.data-section{
+    width: 50%;
+    height: 200px;
+    padding: 20px 30px;
+    border: 2px solid #9DB2BF;
+}
+.data-siswa{
+    display: flex;
+    align-items: center;
+}
+
+.data-siswa #dtsiswa-nama{
+    display: block;
+    width: 70%;
+}
+
+.data-siswa .dtsiswa-kelas{
+    display: block;
+    width: 100%;
+}
+
+.label-jml-saldo{
+    margin-top: 20px;
+}
+
+.tombol{
+/*    width: 80px;*/
+    height: 36px;
+    background-color: #4A55A2;
+    font-weight: 500;
+    padding: 5px 11px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 70px;
+
+}
+
+.tombol:hover{
+    background-color: #7895CB;
+    color: white;
+}
+

@@ -1,0 +1,47 @@
+.navbar{
+  background-color: #4A55A2;
+}
+
+h5, h4{
+  color: #164B60;
+  font-weight: 500;
+}
+
+
+
+
+table{
+  margin-bottom: 10px;
+}
+
+.info-area-data-anak{
+  margin: 10px 0px;
+}
+
+tr .a{
+  width: 150px;
+  font-weight: 500;
+}
+
+tr .b{
+  width: 15px;
+  font-weight: 500;
+}
+
+tr .c{
+  font-weight: 500;
+}
+
+
+
+@media screen and (max-width: 576px) {
+  
+}
+
+@media screen and (min-width: 577px) {
+
+  .nav{
+    justify-content: end;
+  }
+
+}

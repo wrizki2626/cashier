@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.succes{
+    color: green;
+}
+
+.errors{
+    color: red;
+}

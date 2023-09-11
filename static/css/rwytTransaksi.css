@@ -1,0 +1,53 @@
+.navbar{
+    background-color:#4A55A2;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 32px;
+}
+
+.tombol{
+/*    width: 80px;*/
+    background-color: #4A55A2;
+    font-weight: 500;
+    padding: 5px 11px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.tombol:hover{
+    background-color: #7895CB;
+    color: white;
+}
+
+
+.form-section{
+    /* background-color: aqua; */
+    width: 80%;
+    margin: 20px 0px;    
+}
+
+.col input{
+    margin-right: 20px;
+    width: 300px;
+}
+
+
+@media screen and (max-width: 576px) {
+    .col input{
+        margin-right: 20px;
+        width: 200px;
+    }
+  }
+  
+  @media screen and (min-width: 577px) {
+    .nav{
+      justify-content: end;
+    }
+  
+  }
+
+

@@ -1,0 +1,171 @@
+
+.navbar{
+  background-color: #4A55A2;
+}
+
+.keranjang-session{
+    margin-top: 80px;
+}
+
+.list-fnb{
+    margin-top: 20px;
+}
+
+.list-section{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid #9DB2BF;
+    margin-right: 8px;
+}
+
+.cart-section{
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 2px solid #9DB2BF;
+}
+
+.select-kategori{
+    width: 355px;
+    margin-right: 10px;
+}
+
+
+.list-view-fnb{
+    padding-top: 20px;
+}
+
+.card-fnb{
+    margin: 5px 5px;
+}
+
+.card-fnb:hover{
+    box-shadow: 5px 5px 12px #bebebe,
+             -5px -5px 12px #bebebe;
+
+}
+
+.card{
+    border: 1px solid #9DB2BF;
+}
+
+.card img{
+    width: 10rem;
+    height: 9rem;
+}
+
+
+.quantity-on-cart{
+    text-align: center;
+    width: 42px;
+    padding: 0px 3px;
+}
+
+
+.cart-section{
+  display: flex;
+  justify-content: center !important;
+  flex-direction: column;
+}
+
+.bagian-table{
+    border: 1px solid #9DB2BF;
+    padding: 10px 10px;
+    border-radius: 4px;
+}
+
+.table{
+    padding: 8px 8px;
+/*    width: 980px;*/
+}
+
+thead th{
+    width: 160px;
+/*    text-align: center;*/
+}
+
+tbody tr td{
+    width: 160px;
+}
+
+tbody tr td input{
+    width: 87px;
+    border: 1px solid #9DB2BF;
+    text-align: center;
+}
+
+
+.harga-total{
+    border: 1px solid rgb(207, 207, 207);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.h-tt{
+    display: flex;
+    align-items: center;
+}
+
+
+.w-tt-harga{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;  
+    padding: 10px 0px;
+    /* margin-top:10px;  */
+}
+
+.w-tt-harga button img{
+    width: 20px;
+    height: 20px;
+}
+
+.w-tt-harga a img{
+    width: 20px;
+    height: 20px;
+}
+
+.btn-card-sbmt{
+    width: 100%;
+}
+
+.tombol{
+    width: 80px;
+    background-color: #4A55A2;
+    font-weight: 500;
+    padding: 5px 11px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.tombol:hover{
+    background-color: #7895CB;
+    color: white;
+}
+
+
+p{
+    margin: 0;
+    /* padding: 0; */
+}
+
+.col{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+

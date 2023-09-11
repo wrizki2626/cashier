@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  background-color: #4A55A2;
+}
+
+
+.card-section {
+  width: 100%;
+  display: flexbox;
+  flex-wrap: wrap;
+  /* margin: auto; */
+  margin-top: 90px;
+}
+
+h4{
+  font-weight: 500;
+  color: white;
+}
+
+.card {
+  background-color: #4A55A2;
+  height: 130px;
+  width: 20%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 2px solid #9DB2BF; */
+  /* padding: auto 0px; */
+}
+
+.card .card-num {
+  /* asd */
+}
+
+.card .card-text {
+  /* asd */
+}
+
+.quote-section {
+  margin-top: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+blockquote {
+  width: 35%;
+  border: 2px solid #9DB2BF;
+  border-radius: 4px;
+  text-align: center;
+}
+
+blockquote h5 {
+  padding: 35px 10px;
+  margin: 0;
+}
+
+@media screen and (max-width: 576px) {
+  .card-section {
+
+  }
+
+  .card{
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  blockquote{
+    width: 80%;
+  }
+
+}

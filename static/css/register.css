@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+main{ 
+    display: flex;
+    justify-content: center;
+}
+
+.formsectionregister{
+    margin-top: 20px ;
+    width: 800px;
+    padding: 10px 20px;
+    border: 1px solid black;
+
+}
+
+.btn{
+    margin-top: 10px;
+}

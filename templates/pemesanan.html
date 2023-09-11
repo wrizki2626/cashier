@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="../static/css/pemesanan.css">
+{% endblock %}
+
+{% block title %}
+    <title>Halaman Pemesanan</title>
+{% endblock %}
+
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-xxl">
+        <a class="navbar-brand fw-semibold" href="#">App Cashier</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="nav justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="{{url_for('dashboard')}}">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{url_for('pemesanan')}}">Pemesanan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('ceksaldo')}}">Cek Saldo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('riwayattransaksi')}}">Riwayat</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('getCart')}}">Keranjang ({{ session['Shoppingcart']|length }})</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content%}
+<div class="container-xxl">
+    <div class="d-flex justify-content-center list-fnb px-2">
+        <div class="col-sm-9  list-section">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    <div class="alert {{ category }} alert-dismissible fade show text-center" role="alert">
+                        <strong class="text-center">{{ message }}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}   
+            <form action="{{url_for('pemesanansearch')}}" method="POST">
+                <h4>Kategori</h4>
+                <div class=" col d-flex flex-wrap">
+                     <select name="formoption" id="formoption" class="form-select select-kategori">
+                        <option selected value="">Pilih Ketegori</option>
+                        <option value="makanan">Makanan</option>
+                        <option value="minuman">Minuman</option>
+                    </select>
+                    <button type="submit" class="tombol" style="width:120px;">Tampilkan</button>
+                </div>
+            </form>
+            <div class="list-view-fnb d-flex flex-wrap">
+                {% for data in rows %}
+                <div class="card card-fnb">
+                    <img src="data:image/;base64,{{data.image}}" class="card-img-top" alt="..."> 
+                    <div class="card-body">
+                        <h6 class="card-title">{{data.name}}</h6>
+                        <p class="card-text">{{format_rupiah(data.price)}}</p>
+                     </div>
+                    <form action="{{url_for('AddCart')}}" method="POST">
+                        <input name="productid" id="productid" value="{{data.id}}" style="display:none;">
+                        <input name="quantity" id="quantity" value="1" min="1" max="20" style="display:none;">
+                        <button type="submit" class="tombol" style="margin: 0px 40px; margin-bottom: 10px;">+</button>
+                    </form>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- #######3########  end content  ################ -->
+{% block externaljs %}
+<!-- <script src="../static/js/bootstrap.bundle.js"></script> -->
+<!-- <script src="../static/js/bootstrap.bundle.min.js"></script> -->
+{% endblock %}
+{% endblock %}
